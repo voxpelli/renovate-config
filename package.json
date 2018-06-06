@@ -33,14 +33,14 @@
     "unit": {
       "description": "All unit test related packages",
       "extends": [
-        "voxpelli:jsUnit"
+        "@voxpelli:jsUnit"
       ]
     },
     "unitGroup": {
       "description": "Group various unit test packages together",
       "packageRules": [
         {
-          "extends": "voxpelli:unit",
+          "extends": "@voxpelli:unit",
           "groupName": "unit test packages"
         }
       ]
