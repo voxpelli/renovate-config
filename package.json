@@ -1,7 +1,7 @@
 {
   "name": "@voxpelli/renovate-config",
   "description": "Personal preset package for Renovate",
-  "version": "1.0.1",
+  "version": "0.0.0",
   "license": "MIT",
   "author": "Pelle Wessman <pelle@kodfabrik.se> (http://kodfabrik.se/)",
   "homepage": "https://github.com/voxpelli/renovate-config-voxpelli",
@@ -14,7 +14,7 @@
   },
   "renovate-config": {
     "jsUnit": {
-      "description": "Unit test related packages för javascript",
+      "description": "Unit test related packages for javascript",
       "packageNames": [
         "coveralls",
         "istanbul",
