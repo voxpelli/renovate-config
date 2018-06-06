@@ -44,6 +44,29 @@
           "groupName": "unit test packages"
         }
       ]
+    },
+    "versions": {
+      "description": "My own preference of version handling",
+      "packageRules": [
+        {
+          "packagePatterns": [
+            "*"
+          ],
+          "rangeStrategy": "replace"
+        },
+        {
+          "packagePatterns": [
+            "devDependencies"
+          ],
+          "rangeStrategy": "pin"
+        },
+        {
+          "depTypeList": [
+            "peerDependencies"
+          ],
+          "rangeStrategy": "widen"
+        }
+    ]
     }
   }
 }
