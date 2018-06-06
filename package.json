@@ -1,0 +1,49 @@
+{
+  "name": "@voxpelli/renovate-config",
+  "description": "Personal preset package for Renovate",
+  "version": "0.0.0",
+  "license": "MIT",
+  "author": "Pelle Wessman <pelle@kodfabrik.se> (http://kodfabrik.se/)",
+  "homepage": "https://github.com/voxpelli/renovate-config-voxpelli",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/voxpelli/renovate-config-voxpelli.git"
+  },
+  "bugs": {
+    "url": "https://github.com/voxpelli/renovate-config-voxpelli/issues"
+  },
+  "renovate-config": {
+    "jsUnit": {
+      "description": "Unit test related packages för javascript",
+      "packageNames": [
+        "coveralls",
+        "istanbul",
+        "mocha",
+        "mock-fs",
+        "nock",
+        "nyc",
+        "proxyquire",
+        "supertest"
+      ],
+      "packagePatterns": [
+        "^chai",
+        "^sinon"
+      ]
+    },
+    "unit": {
+      "description": "All unit test related packages",
+      "extends": [
+        "voxpelli:jsUnit"
+      ]
+    },
+    "unitGroup": {
+      "description": "Group various unit test packages together",
+      "packageRules": [
+        {
+          "extends": "voxpelli:unit",
+          "groupName": "unit test packages"
+        }
+      ]
+    }
+  }
+}
