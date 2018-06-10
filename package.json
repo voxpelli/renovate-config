@@ -36,6 +36,11 @@
         }
       ]
     },
+    "unitGroup": {
+      "extends": [
+        "group:test"
+      ]
+    },
     "libDefault": {
       "extends": [
         "@voxpelli"
