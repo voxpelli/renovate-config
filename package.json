@@ -13,38 +13,6 @@
     "url": "https://github.com/voxpelli/renovate-config-voxpelli/issues"
   },
   "renovate-config": {
-    "jsUnit": {
-      "description": "Unit test related packages for javascript",
-      "packageNames": [
-        "coveralls",
-        "istanbul",
-        "mocha",
-        "mock-fs",
-        "nock",
-        "nyc",
-        "proxyquire",
-        "supertest"
-      ],
-      "packagePatterns": [
-        "^chai",
-        "^sinon"
-      ]
-    },
-    "unit": {
-      "description": "All unit test related packages",
-      "extends": [
-        "@voxpelli:jsUnit"
-      ]
-    },
-    "unitGroup": {
-      "description": "Group various unit test packages together",
-      "packageRules": [
-        {
-          "extends": "@voxpelli:unit",
-          "groupName": "unit test packages"
-        }
-      ]
-    },
     "versions": {
       "description": "My own preference of version handling",
       "packageRules": [
@@ -68,9 +36,22 @@
         }
       ]
     },
+    "libDefault": {
+      "extends": [
+        "@voxpelli"
+      ]
+    },
+    "appDefault": {
+      "extends": [
+        "@voxpelli",
+        ":maintainLockFilesMonthly"
+      ]
+    },
     "default": {
       "extends": [
-        "@voxpelli:unitGroup",
+        "config:js-lib",
+        "group:linters",
+        "group:test",
         "@voxpelli:versions"
       ]
     }
