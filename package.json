@@ -56,7 +56,7 @@
       "extends": [
         "config:js-lib",
         "group:linters",
-        "group:test",
+        "group:testNonMajor",
         "@voxpelli:versions"
       ]
     }
