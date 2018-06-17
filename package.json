@@ -58,9 +58,7 @@
         ":prConcurrentLimit10"
       ],
       "timezone": "Europe/Stockholm",
-      "schedule": [
-        "every weekend"
-      ],
+      "schedule": "before 5am on Saturday",
       "assignees": [
         "voxpelli"
       ]
