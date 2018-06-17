@@ -42,9 +42,12 @@
     },
     "appDefault": {
       "extends": [
-        "@voxpelli",
-        ":maintainLockFilesMonthly"
-      ]
+        "@voxpelli"
+      ],
+      "lockFileMaintenance": {
+        "enabled": true,
+        "schedule": "before 3am on Saturday"
+      }
     },
     "default": {
       "extends": [
