@@ -53,7 +53,9 @@
         "group:testNonMajor"
       ],
       "timezone": "Europe/Stockholm",
-      "schedule": ["every weekend"]
+      "schedule": [
+        "every weekend"
+      ]
     }
   }
 }
