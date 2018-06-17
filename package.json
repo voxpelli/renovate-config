@@ -55,6 +55,9 @@
       "timezone": "Europe/Stockholm",
       "schedule": [
         "every weekend"
+      ],
+      "assignees": [
+        "voxpelli"
       ]
     }
   }
