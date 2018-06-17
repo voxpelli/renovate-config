@@ -50,7 +50,9 @@
       "extends": [
         "config:js-lib",
         "group:linters",
-        "group:testNonMajor"
+        "group:testNonMajor",
+        ":prHourlyLimit4",
+        ":prConcurrentLimit10"
       ],
       "timezone": "Europe/Stockholm",
       "schedule": [
