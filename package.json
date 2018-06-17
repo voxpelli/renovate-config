@@ -13,26 +13,20 @@
     "url": "https://github.com/voxpelli/renovate-config-voxpelli/issues"
   },
   "renovate-config": {
-    "versions": {
-      "description": "My own preference of version handling",
+    "groupLinters": {
+      "description": "Group all major and non-major linter package updates together respectively",
       "packageRules": [
         {
+          "extends": "packages:linters",
           "packagePatterns": [
-            "*"
+            "eslint"
           ],
-          "rangeStrategy": "replace"
-        },
-        {
-          "packagePatterns": [
-            "devDependencies"
-          ],
-          "rangeStrategy": "pin"
-        },
-        {
-          "depTypeList": [
-            "peerDependencies"
-          ],
-          "rangeStrategy": "widen"
+          "major": {
+            "groupName": "linter-majors"
+          },
+          "minor": {
+            "groupName": "linters"
+          }
         }
       ]
     },
@@ -56,9 +50,10 @@
       "extends": [
         "config:js-lib",
         "group:linters",
-        "group:testNonMajor",
-        "@voxpelli:versions"
-      ]
+        "group:testNonMajor"
+      ],
+      "timezone": "Europe/Stockholm",
+      "schedule": ["every weekend"]
     }
   }
 }
