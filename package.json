@@ -52,7 +52,7 @@
     "default": {
       "extends": [
         "config:js-lib",
-        "group:linters",
+        "@voxpelli:groupLinters",
         "group:testNonMajor",
         ":prHourlyLimit4",
         ":prConcurrentLimit10"
