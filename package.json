@@ -21,11 +21,37 @@
           "packagePatterns": [
             "eslint"
           ],
+          "packageNames": [
+            "dependency-check",
+            "detective-cjs",
+            "installed-check"
+          ],
           "major": {
             "groupName": "linter-majors"
           },
           "minor": {
-            "groupName": "linters"
+            "groupName": "linters",
+            "automerge": true
+          }
+        }
+      ]
+    },
+    "groupTests": {
+      "description": "Group all non-major test package updates together",
+      "packageRules": [
+        {
+          "extends": "packages:test",
+          "packageNames": [
+            "concurrently",
+            "husky",
+            "nodemon"
+          ],
+          "major": {
+            "groupName": "tests-major"
+          },
+          "minor": {
+            "groupName": "tests",
+            "automerge": true
           }
         }
       ]
@@ -53,7 +79,7 @@
       "extends": [
         "config:js-lib",
         "@voxpelli:groupLinters",
-        "group:testNonMajor",
+        "@voxpelli:groupTests",
         ":prHourlyLimit4",
         ":prConcurrentLimit10"
       ],
