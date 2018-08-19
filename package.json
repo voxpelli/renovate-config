@@ -87,6 +87,11 @@
       "schedule": "before 5am on Saturday",
       "assignees": [
         "voxpelli"
+      ],
+      "ignoreDeps": [
+        "concurrently",
+        "eslint",
+        "eslint-plugin-node"
       ]
     }
   }
