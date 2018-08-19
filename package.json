@@ -13,6 +13,16 @@
     "url": "https://github.com/voxpelli/renovate-config-voxpelli/issues"
   },
   "renovate-config": {
+    "replaceDevDependencies": {
+      "packageRules": [
+        {
+          "depTypeList": [
+            "devDependencies"
+          ],
+          "rangeStrategy": "replace"
+        }
+      ]
+    },
     "groupLinters": {
       "description": "Group all major and non-major linter package updates together respectively",
       "packageRules": [
@@ -70,7 +80,8 @@
     },
     "appDefault": {
       "extends": [
-        "@voxpelli"
+        "@voxpelli",
+        "@voxpelli:replaceDevDependencies"
       ],
       "lockFileMaintenance": {
         "enabled": true,
