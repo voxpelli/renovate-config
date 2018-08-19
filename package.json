@@ -91,6 +91,7 @@
         "voxpelli"
       ],
       "ignoreDeps": [
+        "@types/node",
         "concurrently",
         "eslint",
         "eslint-plugin-node"
