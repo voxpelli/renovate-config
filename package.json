@@ -24,7 +24,9 @@
           "packageNames": [
             "dependency-check",
             "detective-cjs",
-            "installed-check"
+            "installed-check",
+            "typescript",
+            "@types/node"
           ],
           "major": {
             "groupName": "linter-majors"
