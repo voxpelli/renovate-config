@@ -102,10 +102,7 @@
         "voxpelli"
       ],
       "ignoreDeps": [
-        "@types/node",
-        "eslint",
-        "eslint-plugin-node",
-        "eslint-plugin-unicorn"
+        "@types/node"
       ]
     }
   }
