@@ -84,8 +84,10 @@
         "@voxpelli:replaceDevDependencies"
       ],
       "lockFileMaintenance": {
-        "enabled": true,
-        "schedule": "before 3am on Saturday"
+        "extends": [
+          "schedule:monthly"
+        ],
+        "enabled": true
       }
     },
     "default": {
@@ -93,11 +95,11 @@
         "config:js-lib",
         "@voxpelli:groupLinters",
         "@voxpelli:groupTests",
+        "schedule:monthly",
         ":prHourlyLimit4",
         ":prConcurrentLimit10"
       ],
       "timezone": "Europe/Stockholm",
-      "schedule": "before 5am on Saturday",
       "assignees": [
         "voxpelli"
       ],
