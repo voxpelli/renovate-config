@@ -93,6 +93,7 @@
     "default": {
       "extends": [
         "config:js-lib",
+        ":masterIssue",
         "@voxpelli:groupLinters",
         "@voxpelli:groupTests",
         "schedule:monthly",
