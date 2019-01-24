@@ -98,7 +98,8 @@
         "@voxpelli:groupTests",
         "schedule:monthly",
         ":prHourlyLimit4",
-        ":prConcurrentLimit10"
+        ":prConcurrentLimit10",
+        "@voxpelli:replaceDevDependencies"
       ],
       "timezone": "Europe/Stockholm",
       "assignees": [
