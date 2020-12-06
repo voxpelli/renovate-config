@@ -138,9 +138,6 @@
         "@voxpelli:vpSchedule",
         "@voxpelli:bumpDevDependencies"
       ],
-      "lockFileMaintenance": {
-        "enabled": true
-      },
       "timezone": "Europe/Stockholm",
       "assignees": [
         "voxpelli"
@@ -150,7 +147,10 @@
       "extends": [
         "@voxpelli",
         "@voxpelli:replaceDevDependencies"
-      ]
+      ],
+      "lockFileMaintenance": {
+        "enabled": true
+      }
     },
     "default": {
       "extends": [
