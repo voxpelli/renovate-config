@@ -23,6 +23,26 @@
         }
       ]
     },
+    "bumpPeerDependencies": {
+      "packageRules": [
+        {
+          "depTypeList": [
+            "peerDependencies"
+          ],
+          "rangeStrategy": "bump"
+        }
+      ]
+    },
+    "bumpDevDependencies": {
+      "packageRules": [
+        {
+          "depTypeList": [
+            "devDependencies"
+          ],
+          "rangeStrategy": "bump"
+        }
+      ]
+    },
     "groupLinters": {
       "description": "Group all major and non-major linter package updates together respectively",
       "packageRules": [
@@ -34,16 +54,35 @@
           "packageNames": [
             "dependency-check",
             "detective-cjs",
-            "installed-check",
-            "typescript",
-            "@types/node"
+            "installed-check"
           ],
           "major": {
             "groupName": "linter-majors"
           },
           "minor": {
-            "groupName": "linters",
-            "automerge": true
+            "groupName": "linters"
+          }
+        }
+      ]
+    },
+    "groupTypes": {
+      "description": "Group all major and non-major type related package updates together",
+      "packageRules": [
+        {
+          "packagePatterns": [
+            "^@types/"
+          ],
+          "packageNames": [
+            "tsd",
+            "type-coverage",
+            "type-fest",
+            "typescript"
+          ],
+          "major": {
+            "groupName": "types-majors"
+          },
+          "minor": {
+            "groupName": "types"
           }
         }
       ]
@@ -53,19 +92,32 @@
       "packageRules": [
         {
           "extends": "packages:test",
+          "packagePatterns": [
+            "chai",
+            "mocha",
+            "sinon"
+          ],
           "packageNames": [
+            "c8",
             "concurrently",
             "husky",
-            "nodemon"
+            "nodemon",
+            "npm-run-all"
           ],
           "major": {
             "groupName": "tests-major"
           },
           "minor": {
-            "groupName": "tests",
-            "automerge": true
+            "groupName": "tests"
           }
         }
+      ]
+    },
+    "vpSchedule": {
+      "schedule": [
+        "before 3am on Tuesday",
+        "before 3am on Thursday",
+        "before 3am on Saturday"
       ]
     },
     "unitGroup": {
@@ -78,35 +130,34 @@
         "@voxpelli"
       ]
     },
+    "vpBase": {
+      "extends": [
+        "config:base",
+        ":masterIssue",
+        ":prConcurrentLimit20",
+        "@voxpelli:vpSchedule",
+        "@voxpelli:bumpDevDependencies"
+      ],
+      "lockFileMaintenance": {
+        "enabled": true
+      },
+      "timezone": "Europe/Stockholm",
+      "assignees": [
+        "voxpelli"
+      ]
+    },
     "appDefault": {
       "extends": [
         "@voxpelli",
         "@voxpelli:replaceDevDependencies"
-      ],
-      "lockFileMaintenance": {
-        "extends": [
-          "schedule:monthly"
-        ],
-        "enabled": true
-      }
+      ]
     },
     "default": {
       "extends": [
-        "config:js-lib",
-        ":masterIssue",
+        "@voxpelli:vpBase",
         "@voxpelli:groupLinters",
         "@voxpelli:groupTests",
-        "schedule:monthly",
-        ":prHourlyLimit4",
-        ":prConcurrentLimit20",
-        "@voxpelli:replaceDevDependencies"
-      ],
-      "timezone": "Europe/Stockholm",
-      "assignees": [
-        "voxpelli"
-      ],
-      "ignoreDeps": [
-        "@types/node"
+        "@voxpelli:groupTypes"
       ]
     }
   }
