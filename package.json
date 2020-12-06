@@ -155,9 +155,9 @@
     "default": {
       "extends": [
         "@voxpelli:vpBase",
-        "@voxpelli:groupLinters",
+        "@voxpelli:groupTypes",
         "@voxpelli:groupTests",
-        "@voxpelli:groupTypes"
+        "@voxpelli:groupLinters"
       ]
     }
   }
