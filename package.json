@@ -132,7 +132,7 @@
     },
     "vpBase": {
       "extends": [
-        "config:base",
+        "config:js-lib",
         ":masterIssue",
         ":prConcurrentLimit20",
         "@voxpelli:vpSchedule",
