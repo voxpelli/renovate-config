@@ -145,8 +145,7 @@
     },
     "appDefault": {
       "extends": [
-        "@voxpelli",
-        "@voxpelli:replaceDevDependencies"
+        "@voxpelli"
       ],
       "lockFileMaintenance": {
         "enabled": true
