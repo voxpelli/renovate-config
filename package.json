@@ -87,6 +87,28 @@
         }
       ]
     },
+    "groupStyles": {
+      "description": "Group all major and non-major CSS related package updates together",
+      "packageRules": [
+        {
+          "packagePatterns": [
+            "postcss",
+            "stylelint"
+          ],
+          "packageNames": [
+            "autoprefixer",
+            "browserslist",
+            "sass"
+          ],
+          "major": {
+            "groupName": "styles-majors"
+          },
+          "minor": {
+            "groupName": "styles"
+          }
+        }
+      ]
+    },
     "groupTests": {
       "description": "Group all non-major test package updates together",
       "packageRules": [
