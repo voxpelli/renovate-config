@@ -176,6 +176,7 @@
     "default": {
       "extends": [
         "@voxpelli:vpBase",
+        "@voxpelli:groupStyles",
         "@voxpelli:groupTypes",
         "@voxpelli:groupTests",
         "@voxpelli:groupLinters"
