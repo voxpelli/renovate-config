@@ -160,10 +160,7 @@
         "@voxpelli:vpSchedule",
         "@voxpelli:bumpDevDependencies"
       ],
-      "timezone": "Europe/Stockholm",
-      "assignees": [
-        "voxpelli"
-      ]
+      "timezone": "Europe/Stockholm"
     },
     "appDefault": {
       "extends": [
