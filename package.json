@@ -137,9 +137,8 @@
     },
     "vpSchedule": {
       "schedule": [
-        "before 3am on Tuesday",
-        "before 3am on Thursday",
-        "before 3am on Saturday"
+        "before 3am on Monday",
+        "before 3am on Thursday"
       ]
     },
     "unitGroup": {
