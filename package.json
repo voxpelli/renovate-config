@@ -12,6 +12,9 @@
   "bugs": {
     "url": "https://github.com/voxpelli/renovate-config-voxpelli/issues"
   },
+  "scripts": {
+    "test": ""
+  },
   "renovate-config": {
     "replaceDevDependencies": {
       "packageRules": [
