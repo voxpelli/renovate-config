@@ -125,6 +125,7 @@
           "packageNames": [
             "c8",
             "concurrently",
+            "cross-env",
             "husky",
             "nodemon",
             "npm-run-all"
