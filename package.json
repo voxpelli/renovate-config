@@ -76,6 +76,7 @@
             "^@types/"
           ],
           "packageNames": [
+            "@voxpelli/tsconfig",
             "tsd",
             "type-coverage",
             "type-fest",
