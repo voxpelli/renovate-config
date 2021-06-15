@@ -129,6 +129,7 @@
             "cross-env",
             "husky",
             "nodemon",
+            "nyc",
             "npm-run-all"
           ],
           "major": {
