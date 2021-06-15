@@ -73,7 +73,7 @@
       "packageRules": [
         {
           "packagePatterns": [
-            "^@types/"
+            "@types"
           ],
           "packageNames": [
             "@voxpelli/tsconfig",
