@@ -17,9 +17,7 @@
   },
   "renovate-config": {
     "packages-lint": {
-      "matchDepTypes": [
-        "devDependencies"
-      ],
+      "matchDepTypes": ["devDependencies"],
       "matchPackagePrefixes": [
         "eslint"
       ],
@@ -30,9 +28,7 @@
       ]
     },
     "packages-style": {
-      "matchDepTypes": [
-        "devDependencies"
-      ],
+      "matchDepTypes": ["devDependencies"],
       "matchPackagePatterns": [
         "postcss",
         "stylelint"
@@ -45,9 +41,7 @@
     },
     "packages-test": {
       "extends": "packages:jsTest",
-      "matchDepTypes": [
-        "devDependencies"
-      ],
+      "matchDepTypes": ["devDependencies"],
       "matchPackagePatterns": [
         "chai",
         "mocha",
@@ -84,9 +78,7 @@
         },
         {
           "extends": "@voxpelli:packages-lint",
-          "matchUpdateTypes": [
-            "major"
-          ],
+          "matchUpdateTypes": ["major"],
           "groupName": "Lint dependencies (major)",
           "groupSlug": "linting-major"
         }
@@ -102,9 +94,7 @@
         },
         {
           "extends": "@voxpelli:packages-style",
-          "matchUpdateTypes": [
-            "major"
-          ],
+          "matchUpdateTypes": ["major"],
           "groupName": "Style dependencies (major)",
           "groupSlug": "styles-major"
         }
@@ -120,9 +110,7 @@
         },
         {
           "extends": "@voxpelli:packages-test",
-          "matchUpdateTypes": [
-            "major"
-          ],
+          "matchUpdateTypes": ["major"],
           "groupName": "Test dependencies (major)",
           "groupSlug": "tests-major"
         }
@@ -142,23 +130,21 @@
     "updateStrategy": {
       "packageRules": [
         {
-          "matchPackagePatterns": [
-            "*"
-          ],
+          "matchPackagePatterns": ["*"],
           "rangeStrategy": "bump"
         },
         {
-          "matchDepTypes": [
-            "peerDependencies"
-          ],
+          "matchDepTypes": ["peerDependencies"],
           "rangeStrategy": "widen"
+        },
+        {
+          "matchDepTypes": ["engines"],
+          "rangeStrategy": "replace"
         }
       ]
     },
     "vpSchedule": {
-      "schedule": [
-        "before 2pm on Wednesday"
-      ]
+      "schedule": ["before 2pm on Wednesday"]
     },
     "vpBase": {
       "extends": [
@@ -176,6 +162,7 @@
         "@voxpelli:vpSchedule",
         "@voxpelli:updateStrategy"
       ],
+      "supportPolicy": ["all"],
       "timezone": "Europe/Stockholm"
     },
     "appDefault": {
@@ -190,9 +177,7 @@
       },
       "packageRules": [
         {
-          "matchPackagePatterns": [
-            "*"
-          ],
+          "matchPackagePatterns": ["*"],
           "rangeStrategy": "replace"
         }
       ]
