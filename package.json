@@ -122,7 +122,8 @@
     },
     "vpSchedule": {
       "schedule": [
-        "before 2pm on Wednesday"
+        "before 2pm on Tuesday",
+        "before 2pm on Friday"
       ]
     },
     "vpBase": {
