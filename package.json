@@ -83,10 +83,10 @@
             "typescript"
           ],
           "major": {
-            "groupName": "types-majors"
+            "groupName": "types-major"
           },
           "minor": {
-            "groupName": "types"
+            "groupName": "types-minor"
           }
         }
       ]
@@ -164,6 +164,7 @@
         "@voxpelli:vpSchedule",
         "@voxpelli:bumpDevDependencies"
       ],
+      "prHourlyLimit": 4,
       "timezone": "Europe/Stockholm"
     },
     "appDefault": {
