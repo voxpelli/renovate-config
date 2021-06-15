@@ -1,7 +1,7 @@
 {
   "name": "@voxpelli/renovate-config",
   "description": "Personal preset package for Renovate",
-  "version": "2.8.5",
+  "version": "2.9.0",
   "license": "MIT",
   "author": "Pelle Wessman <pelle@kodfabrik.se> (http://kodfabrik.se/)",
   "homepage": "https://github.com/voxpelli/renovate-config-voxpelli",
@@ -17,7 +17,9 @@
   },
   "renovate-config": {
     "packages-lint": {
-      "matchDepTypes": ["devDependencies"],
+      "matchDepTypes": [
+        "devDependencies"
+      ],
       "matchPackagePrefixes": [
         "eslint"
       ],
@@ -28,7 +30,9 @@
       ]
     },
     "packages-style": {
-      "matchDepTypes": ["devDependencies"],
+      "matchDepTypes": [
+        "devDependencies"
+      ],
       "matchPackagePatterns": [
         "postcss",
         "stylelint"
@@ -41,7 +45,9 @@
     },
     "packages-test": {
       "extends": "packages:jsTest",
-      "matchDepTypes": ["devDependencies"],
+      "matchDepTypes": [
+        "devDependencies"
+      ],
       "matchPackagePatterns": [
         "chai",
         "mocha",
@@ -73,13 +79,18 @@
       "packageRules": [
         {
           "extends": "@voxpelli:packages-lint",
-          "matchUpdateTypes": ["major"],
+          "matchUpdateTypes": [
+            "major"
+          ],
           "groupName": "Lint dependencies (major)",
           "groupSlug": "linting-major"
         },
         {
           "extends": "@voxpelli:packages-lint",
-          "matchUpdateTypes": ["minor", "patch"],
+          "matchUpdateTypes": [
+            "minor",
+            "patch"
+          ],
           "groupName": "Lint dependencies",
           "groupSlug": "linting",
           "rangeStrategy": "bump"
@@ -91,13 +102,18 @@
       "packageRules": [
         {
           "extends": "@voxpelli:packages-style",
-          "matchUpdateTypes": ["major"],
+          "matchUpdateTypes": [
+            "major"
+          ],
           "groupName": "Style dependencies (major)",
           "groupSlug": "styles-major"
         },
         {
           "extends": "@voxpelli:packages-style",
-          "matchUpdateTypes": ["minor", "patch"],
+          "matchUpdateTypes": [
+            "minor",
+            "patch"
+          ],
           "groupName": "Style dependencies",
           "groupSlug": "styles"
         }
@@ -108,13 +124,18 @@
       "packageRules": [
         {
           "extends": "@voxpelli:packages-test",
-          "matchUpdateTypes": ["major"],
+          "matchUpdateTypes": [
+            "major"
+          ],
           "groupName": "Test dependencies (major)",
           "groupSlug": "tests-major"
         },
         {
           "extends": "@voxpelli:packages-test",
-          "matchUpdateTypes": ["minor", "patch"],
+          "matchUpdateTypes": [
+            "minor",
+            "patch"
+          ],
           "groupName": "Test dependencies",
           "groupSlug": "tests",
           "rangeStrategy": "bump"
@@ -126,13 +147,18 @@
       "packageRules": [
         {
           "extends": "@voxpelli:packages-types",
-          "matchUpdateTypes": ["major"],
+          "matchUpdateTypes": [
+            "major"
+          ],
           "groupName": "Type dependencies (major)",
           "groupSlug": "types-major"
         },
         {
           "extends": "@voxpelli:packages-types",
-          "matchUpdateTypes": ["minor", "patch"],
+          "matchUpdateTypes": [
+            "minor",
+            "patch"
+          ],
           "groupName": "Type dependencies",
           "groupSlug": "types",
           "rangeStrategy": "bump"
