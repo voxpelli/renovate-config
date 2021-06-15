@@ -72,8 +72,8 @@
       "description": "Group all major and non-major type related package updates together",
       "packageRules": [
         {
-          "packagePatterns": [
-            "@types"
+          "matchPackagePrefixes": [
+            "@types/"
           ],
           "packageNames": [
             "@voxpelli/tsconfig",
