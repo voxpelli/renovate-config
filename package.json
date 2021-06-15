@@ -51,7 +51,7 @@
       "packageRules": [
         {
           "extends": "packages:linters",
-          "packagePatterns": [
+          "matchPackagePrefixes": [
             "eslint"
           ],
           "packageNames": [
