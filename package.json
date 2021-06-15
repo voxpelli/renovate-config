@@ -111,20 +111,12 @@
       ]
     },
     "groupTests": {
-      "description": "Group all major and non-major test  related package updates together",
+      "description": "Group all major and non-major test related package updates together",
       "packageRules": [
         {
           "extends": "@voxpelli:packages-test",
           "groupName": "Test dependencies",
           "groupSlug": "tests"
-        },
-        {
-          "extends": "@voxpelli:packages-test",
-          "matchUpdateTypes": [
-            "major"
-          ],
-          "groupName": "Test dependencies (major)",
-          "groupSlug": "tests-major"
         }
       ]
     },
