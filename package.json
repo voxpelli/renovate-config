@@ -160,6 +160,7 @@
         "config:js-lib",
         ":masterIssue",
         ":prConcurrentLimit20",
+        ":noUnscheduledUpdates",
         "@voxpelli:vpSchedule",
         "@voxpelli:bumpDevDependencies"
       ],
