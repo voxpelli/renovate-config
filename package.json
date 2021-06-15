@@ -101,6 +101,12 @@
     "updateStrategy": {
       "packageRules": [
         {
+          "matchPackagePatterns": [
+            "*"
+          ],
+          "rangeStrategy": "replace"
+        },
+        {
           "matchDepTypes": [
             "devDependencies"
           ],
