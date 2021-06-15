@@ -135,14 +135,6 @@
           "extends": "@voxpelli:packages-types",
           "groupName": "Type dependencies",
           "groupSlug": "types"
-        },
-        {
-          "extends": "@voxpelli:packages-types",
-          "matchUpdateTypes": [
-            "major"
-          ],
-          "groupName": "Type dependencies (major)",
-          "groupSlug": "types-major"
         }
       ]
     },
