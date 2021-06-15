@@ -1,7 +1,7 @@
 {
   "name": "@voxpelli/renovate-config",
   "description": "Personal preset package for Renovate",
-  "version": "2.9.0",
+  "version": "2.8.5",
   "license": "MIT",
   "author": "Pelle Wessman <pelle@kodfabrik.se> (http://kodfabrik.se/)",
   "homepage": "https://github.com/voxpelli/renovate-config-voxpelli",
@@ -17,9 +17,7 @@
   },
   "renovate-config": {
     "packages-lint": {
-      "matchDepTypes": [
-        "devDependencies"
-      ],
+      "matchDepTypes": ["devDependencies"],
       "matchPackagePrefixes": [
         "eslint"
       ],
@@ -30,9 +28,7 @@
       ]
     },
     "packages-style": {
-      "matchDepTypes": [
-        "devDependencies"
-      ],
+      "matchDepTypes": ["devDependencies"],
       "matchPackagePatterns": [
         "postcss",
         "stylelint"
@@ -45,9 +41,7 @@
     },
     "packages-test": {
       "extends": "packages:jsTest",
-      "matchDepTypes": [
-        "devDependencies"
-      ],
+      "matchDepTypes": ["devDependencies"],
       "matchPackagePatterns": [
         "chai",
         "mocha",
@@ -66,7 +60,7 @@
       "matchPackagePrefixes": [
         "@types/"
       ],
-      "matchPackageNames": [
+      "packageNames": [
         "@voxpelli/tsconfig",
         "tsd",
         "type-coverage",
@@ -79,21 +73,14 @@
       "packageRules": [
         {
           "extends": "@voxpelli:packages-lint",
-          "matchUpdateTypes": [
-            "major"
-          ],
-          "groupName": "Lint dependencies (major)",
-          "groupSlug": "linting-major"
+          "groupName": "Lint dependencies",
+          "groupSlug": "linting"
         },
         {
           "extends": "@voxpelli:packages-lint",
-          "matchUpdateTypes": [
-            "minor",
-            "patch"
-          ],
-          "groupName": "Lint dependencies",
-          "groupSlug": "linting",
-          "rangeStrategy": "bump"
+          "matchUpdateTypes": ["major"],
+          "groupName": "Lint dependencies (major)",
+          "groupSlug": "linting-major"
         }
       ]
     },
@@ -102,20 +89,14 @@
       "packageRules": [
         {
           "extends": "@voxpelli:packages-style",
-          "matchUpdateTypes": [
-            "major"
-          ],
-          "groupName": "Style dependencies (major)",
-          "groupSlug": "styles-major"
+          "groupName": "Style dependencies",
+          "groupSlug": "styles"
         },
         {
           "extends": "@voxpelli:packages-style",
-          "matchUpdateTypes": [
-            "minor",
-            "patch"
-          ],
-          "groupName": "Style dependencies",
-          "groupSlug": "styles"
+          "matchUpdateTypes": ["major"],
+          "groupName": "Style dependencies (major)",
+          "groupSlug": "styles-major"
         }
       ]
     },
@@ -124,21 +105,14 @@
       "packageRules": [
         {
           "extends": "@voxpelli:packages-test",
-          "matchUpdateTypes": [
-            "major"
-          ],
-          "groupName": "Test dependencies (major)",
-          "groupSlug": "tests-major"
+          "groupName": "Test dependencies",
+          "groupSlug": "tests"
         },
         {
           "extends": "@voxpelli:packages-test",
-          "matchUpdateTypes": [
-            "minor",
-            "patch"
-          ],
-          "groupName": "Test dependencies",
-          "groupSlug": "tests",
-          "rangeStrategy": "bump"
+          "matchUpdateTypes": ["major"],
+          "groupName": "Test dependencies (major)",
+          "groupSlug": "tests-major"
         }
       ]
     },
@@ -147,27 +121,35 @@
       "packageRules": [
         {
           "extends": "@voxpelli:packages-types",
-          "matchUpdateTypes": [
-            "major"
-          ],
-          "groupName": "Type dependencies (major)",
-          "groupSlug": "types-major"
+          "groupName": "Type dependencies",
+          "groupSlug": "types"
         },
         {
           "extends": "@voxpelli:packages-types",
-          "matchUpdateTypes": [
-            "minor",
-            "patch"
-          ],
-          "groupName": "Type dependencies",
-          "groupSlug": "types",
+          "matchUpdateTypes": ["major"],
+          "groupName": "Type dependencies (major)",
+          "groupSlug": "types-major"
+        }
+      ]
+    },
+    "appStrategy": {
+
+    },
+    "updateStrategy": {
+      "packageRules": [
+        {
+          "matchPackagePatterns": ["*"],
           "rangeStrategy": "bump"
+        },
+        {
+          "matchDepTypes": ["peerDependencies"],
+          "rangeStrategy": "widen"
         }
       ]
     },
     "vpSchedule": {
       "schedule": [
-        "on Wednesday"
+        "before 2pm on Wednesday"
       ]
     },
     "vpBase": {
@@ -183,7 +165,8 @@
         ":prConcurrentLimit20",
         ":noUnscheduledUpdates",
         "workarounds:all",
-        "@voxpelli:vpSchedule"
+        "@voxpelli:vpSchedule",
+        "@voxpelli:updateStrategy"
       ],
       "timezone": "Europe/Stockholm"
     },
@@ -192,8 +175,15 @@
         "@voxpelli"
       ],
       "lockFileMaintenance": {
-        "enabled": true
-      }
+        "enabled": true,
+        "extends": ["@voxpelli:vpSchedule"]
+      },
+      "packageRules": [
+        {
+          "matchPackagePatterns": ["*"],
+          "rangeStrategy": "replace"
+        }
+      ]
     },
     "default": {
       "extends": [
