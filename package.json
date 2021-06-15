@@ -74,63 +74,30 @@
         "typescript"
       ]
     },
-    "groupLinters": {
-      "description": "Group all major and non-major linting related package updates together",
-      "packageRules": [
-        {
-          "extends": "@voxpelli:packages-lint",
-          "groupName": "Lint dependencies",
-          "groupSlug": "linting"
-        },
-        {
-          "extends": "@voxpelli:packages-lint",
-          "matchUpdateTypes": [
-            "major"
-          ],
-          "groupName": "Lint dependencies (major)",
-          "groupSlug": "linting-major"
-        }
-      ]
-    },
-    "groupStyles": {
-      "description": "Group all major and non-major style/CSS related package updates together",
+    "groups": {
       "packageRules": [
         {
           "extends": "@voxpelli:packages-style",
-          "groupName": "Style dependencies",
+          "groupName": "style dependencies",
           "groupSlug": "styles"
         },
         {
-          "extends": "@voxpelli:packages-style",
-          "matchUpdateTypes": [
-            "major"
-          ],
-          "groupName": "Style dependencies (major)",
-          "groupSlug": "styles-major"
-        }
-      ]
-    },
-    "groupTests": {
-      "description": "Group all major and non-major test related package updates together",
-      "packageRules": [
+          "extends": "@voxpelli:packages-types",
+          "groupName": "type dependencies",
+          "groupSlug": "types"
+        },
         {
           "extends": "@voxpelli:packages-test",
-          "groupName": "Test dependencies",
+          "groupName": "test dependencies",
           "groupSlug": "tests"
-        }
-      ]
-    },
-    "groupTypes": {
-      "description": "Group all major and non-major type related package updates together",
-      "packageRules": [
+        },
         {
-          "extends": "@voxpelli:packages-types",
-          "groupName": "Type dependencies",
-          "groupSlug": "types"
+          "extends": "@voxpelli:packages-lint",
+          "groupName": "linting dependencies",
+          "groupSlug": "linting"
         }
       ]
     },
-    "appStrategy": {},
     "updateStrategy": {
       "packageRules": [
         {
@@ -201,10 +168,7 @@
     "default": {
       "extends": [
         "@voxpelli:vpBase",
-        "@voxpelli:groupStyles",
-        "@voxpelli:groupTypes",
-        "@voxpelli:groupTests",
-        "@voxpelli:groupLinters"
+        "@voxpelli:groups"
       ]
     }
   }
