@@ -101,8 +101,8 @@
     "updateStrategy": {
       "packageRules": [
         {
-          "matchPackagePatterns": [
-            "*"
+          "matchDepTypes": [
+            "devDependencies"
           ],
           "rangeStrategy": "bump"
         },
@@ -111,12 +111,6 @@
             "peerDependencies"
           ],
           "rangeStrategy": "widen"
-        },
-        {
-          "matchDepTypes": [
-            "engines"
-          ],
-          "rangeStrategy": "replace"
         }
       ]
     },
