@@ -136,10 +136,7 @@
           },
           "minor": {
             "groupName": "tests"
-          },
-          "ignoreDeps": [
-            "husky"
-          ]
+          }
         }
       ]
     },
