@@ -16,55 +16,108 @@
     "test": ""
   },
   "renovate-config": {
-    "replaceDevDependencies": {
-      "packageRules": [
-        {
-          "depTypeList": [
-            "devDependencies"
-          ],
-          "rangeStrategy": "replace"
-        }
+    "packages-lint": {
+      "matchDepTypes": ["devDependencies"],
+      "matchPackagePrefixes": [
+        "eslint"
+      ],
+      "matchPackageNames": [
+        "dependency-check",
+        "detective-cjs",
+        "installed-check"
       ]
     },
-    "bumpPeerDependencies": {
-      "packageRules": [
-        {
-          "depTypeList": [
-            "peerDependencies"
-          ],
-          "rangeStrategy": "bump"
-        }
+    "packages-style": {
+      "matchDepTypes": ["devDependencies"],
+      "matchPackagePatterns": [
+        "postcss",
+        "stylelint"
+      ],
+      "matchPackageNames": [
+        "autoprefixer",
+        "browserslist",
+        "sass"
       ]
     },
-    "bumpDevDependencies": {
-      "packageRules": [
-        {
-          "depTypeList": [
-            "devDependencies"
-          ],
-          "rangeStrategy": "bump"
-        }
+    "packages-test": {
+      "extends": "packages:jsTest",
+      "matchDepTypes": ["devDependencies"],
+      "matchPackagePatterns": [
+        "chai",
+        "mocha",
+        "sinon"
+      ],
+      "matchPackageNames": [
+        "c8",
+        "concurrently",
+        "cross-env",
+        "husky",
+        "nodemon",
+        "npm-run-all"
+      ]
+    },
+    "packages-types": {
+      "matchPackagePrefixes": [
+        "@types/"
+      ],
+      "matchPackageNames": [
+        "@voxpelli/tsconfig",
+        "tsd",
+        "type-coverage",
+        "type-fest",
+        "typescript"
       ]
     },
     "groupLinters": {
-      "description": "Group all major and non-major linter package updates together respectively",
+      "description": "Group all major and non-major linting related package updates together",
       "packageRules": [
         {
-          "extends": "packages:linters",
-          "matchPackagePrefixes": [
-            "eslint"
-          ],
-          "packageNames": [
-            "dependency-check",
-            "detective-cjs",
-            "installed-check"
-          ],
-          "major": {
-            "groupName": "linter-majors"
-          },
-          "minor": {
-            "groupName": "linters"
-          }
+          "extends": "@voxpelli:packages-lint",
+          "matchUpdateTypes": ["major"],
+          "groupName": "Lint dependencies (major)",
+          "groupSlug": "linting-major"
+        },
+        {
+          "extends": "@voxpelli:packages-lint",
+          "matchUpdateTypes": ["minor", "patch"],
+          "groupName": "Lint dependencies",
+          "groupSlug": "linting",
+          "rangeStrategy": "bump"
+        }
+      ]
+    },
+    "groupStyles": {
+      "description": "Group all major and non-major style/CSS related package updates together",
+      "packageRules": [
+        {
+          "extends": "@voxpelli:packages-style",
+          "matchUpdateTypes": ["major"],
+          "groupName": "Style dependencies (major)",
+          "groupSlug": "styles-major"
+        },
+        {
+          "extends": "@voxpelli:packages-style",
+          "matchUpdateTypes": ["minor", "patch"],
+          "groupName": "Style dependencies",
+          "groupSlug": "styles"
+        }
+      ]
+    },
+    "groupTests": {
+      "description": "Group all major and non-major test  related package updates together",
+      "packageRules": [
+        {
+          "extends": "@voxpelli:packages-test",
+          "matchUpdateTypes": ["major"],
+          "groupName": "Test dependencies (major)",
+          "groupSlug": "tests-major"
+        },
+        {
+          "extends": "@voxpelli:packages-test",
+          "matchUpdateTypes": ["minor", "patch"],
+          "groupName": "Test dependencies",
+          "groupSlug": "tests",
+          "rangeStrategy": "bump"
         }
       ]
     },
@@ -72,100 +125,40 @@
       "description": "Group all major and non-major type related package updates together",
       "packageRules": [
         {
-          "matchPackagePrefixes": [
-            "@types/"
-          ],
-          "packageNames": [
-            "@voxpelli/tsconfig",
-            "tsd",
-            "type-coverage",
-            "type-fest",
-            "typescript"
-          ],
-          "major": {
-            "groupName": "types-major"
-          },
-          "minor": {
-            "groupName": "types-minor"
-          }
-        }
-      ]
-    },
-    "groupStyles": {
-      "description": "Group all major and non-major CSS related package updates together",
-      "packageRules": [
+          "extends": "@voxpelli:packages-types",
+          "matchUpdateTypes": ["major"],
+          "groupName": "Type dependencies (major)",
+          "groupSlug": "types-major"
+        },
         {
-          "packagePatterns": [
-            "postcss",
-            "stylelint"
-          ],
-          "packageNames": [
-            "autoprefixer",
-            "browserslist",
-            "sass"
-          ],
-          "major": {
-            "groupName": "styles-majors"
-          },
-          "minor": {
-            "groupName": "styles"
-          }
-        }
-      ]
-    },
-    "groupTests": {
-      "description": "Group all non-major test package updates together",
-      "packageRules": [
-        {
-          "extends": "packages:test",
-          "packagePatterns": [
-            "chai",
-            "mocha",
-            "sinon"
-          ],
-          "packageNames": [
-            "c8",
-            "concurrently",
-            "cross-env",
-            "husky",
-            "nodemon",
-            "nyc",
-            "npm-run-all"
-          ],
-          "major": {
-            "groupName": "tests-major"
-          },
-          "minor": {
-            "groupName": "tests"
-          }
+          "extends": "@voxpelli:packages-types",
+          "matchUpdateTypes": ["minor", "patch"],
+          "groupName": "Type dependencies",
+          "groupSlug": "types",
+          "rangeStrategy": "bump"
         }
       ]
     },
     "vpSchedule": {
       "schedule": [
-        "on Tuesday"
-      ]
-    },
-    "unitGroup": {
-      "extends": [
-        "group:test"
-      ]
-    },
-    "libDefault": {
-      "extends": [
-        "@voxpelli"
+        "on Wednesday"
       ]
     },
     "vpBase": {
       "extends": [
-        "config:js-lib",
-        ":masterIssue",
+        ":separateMajorReleases",
+        ":combinePatchMinorReleases",
+        ":ignoreUnstable",
+        ":prImmediately",
+        ":automergeDisabled",
+        ":ignoreModulesAndTests",
+        ":dependencyDashboard",
+        ":prHourlyLimitNone",
         ":prConcurrentLimit20",
         ":noUnscheduledUpdates",
-        "@voxpelli:vpSchedule",
-        "@voxpelli:bumpDevDependencies"
+        "workarounds:all",
+        "@voxpelli:vpSchedule"
       ],
-      "prHourlyLimit": 4,
       "timezone": "Europe/Stockholm"
     },
     "appDefault": {
