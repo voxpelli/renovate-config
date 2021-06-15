@@ -144,6 +144,7 @@
       "supportPolicy": [
         "all"
       ],
+      "ignoreDeps": "@types/node",
       "timezone": "Europe/Stockholm"
     },
     "appDefault": {
