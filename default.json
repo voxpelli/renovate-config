@@ -1,0 +1,160 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "packages-lint": {
+    "matchDepTypes": [
+      "devDependencies"
+    ],
+    "matchPackagePrefixes": [
+      "eslint"
+    ],
+    "matchPackageNames": [
+      "dependency-check",
+      "detective-cjs",
+      "installed-check"
+    ]
+  },
+  "packages-style": {
+    "matchDepTypes": [
+      "devDependencies"
+    ],
+    "matchPackagePatterns": [
+      "postcss",
+      "stylelint"
+    ],
+    "matchPackageNames": [
+      "autoprefixer",
+      "browserslist",
+      "sass"
+    ]
+  },
+  "packages-test": {
+    "extends": "packages:jsTest",
+    "matchDepTypes": [
+      "devDependencies"
+    ],
+    "matchPackagePatterns": [
+      "chai",
+      "mocha",
+      "sinon"
+    ],
+    "matchPackageNames": [
+      "c8",
+      "concurrently",
+      "cross-env",
+      "husky",
+      "nodemon",
+      "npm-run-all"
+    ]
+  },
+  "packages-types": {
+    "matchPackagePrefixes": [
+      "@types/"
+    ],
+    "packageNames": [
+      "@voxpelli/tsconfig",
+      "tsd",
+      "type-coverage",
+      "type-fest",
+      "typescript"
+    ]
+  },
+  "groups": {
+    "packageRules": [
+      {
+        "extends": "@voxpelli:packages-style",
+        "groupName": "style dependencies",
+        "groupSlug": "styles"
+      },
+      {
+        "extends": "@voxpelli:packages-types",
+        "groupName": "type dependencies",
+        "groupSlug": "types"
+      },
+      {
+        "extends": "@voxpelli:packages-test",
+        "groupName": "test dependencies",
+        "groupSlug": "tests"
+      },
+      {
+        "extends": "@voxpelli:packages-lint",
+        "groupName": "linting dependencies",
+        "groupSlug": "linting"
+      }
+    ]
+  },
+  "updateStrategy": {
+    "packageRules": [
+      {
+        "matchPackagePatterns": [
+          "*"
+        ],
+        "rangeStrategy": "replace"
+      },
+      {
+        "matchDepTypes": [
+          "devDependencies"
+        ],
+        "rangeStrategy": "bump"
+      },
+      {
+        "matchDepTypes": [
+          "peerDependencies"
+        ],
+        "rangeStrategy": "widen"
+      }
+    ]
+  },
+  "vpSchedule": {
+    "schedule": [
+      "before 2pm on Tuesday",
+      "before 2pm on Friday"
+    ]
+  },
+  "vpBase": {
+    "extends": [
+      ":separateMajorReleases",
+      ":combinePatchMinorReleases",
+      ":ignoreUnstable",
+      ":prImmediately",
+      ":automergeDisabled",
+      ":ignoreModulesAndTests",
+      ":dependencyDashboard",
+      ":prHourlyLimitNone",
+      ":prConcurrentLimit20",
+      ":noUnscheduledUpdates",
+      "workarounds:all",
+      "@voxpelli:vpSchedule",
+      "@voxpelli:updateStrategy"
+    ],
+    "supportPolicy": [
+      "all"
+    ],
+    "ignoreDeps": "@types/node",
+    "timezone": "Europe/Stockholm"
+  },
+  "appDefault": {
+    "extends": [
+      "@voxpelli"
+    ],
+    "lockFileMaintenance": {
+      "enabled": true,
+      "extends": [
+        "@voxpelli:vpSchedule"
+      ]
+    },
+    "packageRules": [
+      {
+        "matchPackagePatterns": [
+          "*"
+        ],
+        "rangeStrategy": "replace"
+      }
+    ]
+  },
+  "default": {
+    "extends": [
+      "@voxpelli:vpBase",
+      "@voxpelli:groups"
+    ]
+  }
+}
