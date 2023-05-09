@@ -1,0 +1,23 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "packageRules": [
+    {
+      "matchPackagePatterns": [
+        "*"
+      ],
+      "rangeStrategy": "replace"
+    },
+    {
+      "matchDepTypes": [
+        "devDependencies"
+      ],
+      "rangeStrategy": "bump"
+    },
+    {
+      "matchDepTypes": [
+        "peerDependencies"
+      ],
+      "rangeStrategy": "widen"
+    }
+  ]
+}

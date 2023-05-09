@@ -1,0 +1,24 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "description": "My base setup for Renovate",
+  "extends": [
+    ":separateMajorReleases",
+    ":combinePatchMinorReleases",
+    ":ignoreUnstable",
+    ":prImmediately",
+    ":automergeDisabled",
+    ":ignoreModulesAndTests",
+    ":dependencyDashboard",
+    ":prHourlyLimitNone",
+    ":prConcurrentLimit20",
+    ":noUnscheduledUpdates",
+    "workarounds:all",
+    "github>voxpelli/renovate-config:schedule",
+    "github>voxpelli/renovate-config:update-strategy"
+  ],
+  "supportPolicy": [
+    "all"
+  ],
+  "ignoreDeps": ["@types/node"],
+  "timezone": "Europe/Stockholm"
+}

@@ -1,0 +1,71 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "packageRules": [
+    {
+      "groupName": "style dependencies",
+      "groupSlug": "styles",
+      "matchDepTypes": [
+        "devDependencies"
+      ],
+      "matchPackagePatterns": [
+        "postcss",
+        "stylelint"
+      ],
+      "matchPackageNames": [
+        "autoprefixer",
+        "browserslist",
+        "sass"
+      ]
+    },
+    {
+      "groupName": "type dependencies",
+      "groupSlug": "types",
+      "matchPackagePrefixes": [
+        "@types/"
+      ],
+      "packageNames": [
+        "@voxpelli/tsconfig",
+        "tsd",
+        "type-coverage",
+        "type-fest",
+        "typescript"
+      ]
+    },
+    {
+      "groupName": "test dependencies",
+      "groupSlug": "tests",
+      "extends": "packages:jsTest",
+      "matchDepTypes": [
+        "devDependencies"
+      ],
+      "matchPackagePatterns": [
+        "chai",
+        "mocha",
+        "sinon"
+      ],
+      "matchPackageNames": [
+        "c8",
+        "concurrently",
+        "cross-env",
+        "husky",
+        "nodemon",
+        "npm-run-all"
+      ]
+    },
+    {
+      "groupName": "linting dependencies",
+      "groupSlug": "linting",
+      "matchDepTypes": [
+        "devDependencies"
+      ],
+      "matchPackagePrefixes": [
+        "eslint"
+      ],
+      "matchPackageNames": [
+        "dependency-check",
+        "detective-cjs",
+        "installed-check"
+      ]
+    }
+  ]
+}

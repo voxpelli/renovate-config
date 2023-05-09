@@ -1,0 +1,20 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "github>voxpelli/renovate-config"
+  ],
+  "lockFileMaintenance": {
+    "enabled": true,
+    "extends": [
+      "github>voxpelli/renovate-config:schedule"
+    ]
+  },
+  "packageRules": [
+    {
+      "matchPackagePatterns": [
+        "*"
+      ],
+      "rangeStrategy": "replace"
+    }
+  ]
+}
