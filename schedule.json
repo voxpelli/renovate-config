@@ -2,7 +2,6 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "description": "My base schedule",
   "schedule": [
-    "before 2pm on Tuesday",
-    "before 2pm on Friday"
+    "before 2pm on Tuesday"
   ]
 }
