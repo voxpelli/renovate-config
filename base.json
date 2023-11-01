@@ -12,6 +12,7 @@
     ":prHourlyLimitNone",
     ":prConcurrentLimit20",
     ":noUnscheduledUpdates",
+    "replacements:all",
     "workarounds:all",
     "github>voxpelli/renovate-config:schedule",
     "github>voxpelli/renovate-config:update-strategy"
