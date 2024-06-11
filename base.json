@@ -12,6 +12,7 @@
     ":prHourlyLimitNone",
     ":prConcurrentLimit20",
     ":noUnscheduledUpdates",
+    "helpers:disableTypesNodeMajor",
     "replacements:all",
     "workarounds:all",
     "github>voxpelli/renovate-config:schedule",
@@ -20,6 +21,5 @@
   "supportPolicy": [
     "all"
   ],
-  "ignoreDeps": ["@types/node"],
   "timezone": "Europe/Stockholm"
 }

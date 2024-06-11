@@ -1,22 +1,17 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    ":semanticCommits"
+    ":semanticCommits",
+    ":semanticPrefixFixDepsChoreOthers"
   ],
   "packageRules": [
-    {
-      "matchDepTypes": [
-        "dependencies"
-      ],
-      "semanticCommitType": "chore"
-    },
     {
       "matchDepTypes": [
         "peerDependencies"
       ],
       "rangeStrategy": "bump",
       "semanticCommitScope": "",
-      "semanticCommitType": "chore!"
+      "semanticCommitType": "fix!"
     },
     {
       "matchDepTypes": [
