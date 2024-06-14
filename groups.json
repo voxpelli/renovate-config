@@ -69,6 +69,22 @@
         "installed-check",
         "knip"
       ]
+    },
+    {
+      "groupName": "artifact / pages actions",
+      "groupSlug": "artifact-pages-actions",
+      "matchManagers": [
+        "github-actions"
+      ],
+      "matchPackageNames": [
+        "actions/deploy-pages",
+        "actions/download-artifact",
+        "actions/upload-artifact",
+        "actions/upload-pages-artifact"
+      ],
+      "matchUpdateTypes": [
+        "major"
+      ]
     }
   ]
 }
