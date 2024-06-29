@@ -3,12 +3,6 @@
   "extends": [
     "github>voxpelli/renovate-config"
   ],
-  "lockFileMaintenance": {
-    "enabled": true,
-    "extends": [
-      "github>voxpelli/renovate-config:schedule"
-    ]
-  },
   "packageRules": [
     {
       "matchPackagePatterns": [
