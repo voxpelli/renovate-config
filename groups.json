@@ -67,7 +67,8 @@
         "dependency-check",
         "detective-cjs",
         "installed-check",
-        "knip"
+        "knip",
+        "validate-conventional-commit"
       ]
     },
     {
