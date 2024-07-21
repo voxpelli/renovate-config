@@ -1,0 +1,13 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "packageRules": [
+    {
+    "matchPackageNames": ["chai"],
+    "allowedVersions": "<5"
+    },
+    {
+      "matchPackageNames": ["chai-as-promised"],
+      "allowedVersions": "<8"
+    }  
+  ]
+}

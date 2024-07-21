@@ -16,7 +16,8 @@
     "replacements:all",
     "workarounds:all",
     "github>voxpelli/renovate-config:schedule",
-    "github>voxpelli/renovate-config:update-strategy"
+    "github>voxpelli/renovate-config:update-strategy",
+    "github>voxpelli/renovate-config:ignores"
   ],
   "lockFileMaintenance": {
     "enabled": true,
