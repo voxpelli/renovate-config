@@ -8,6 +8,10 @@
     {
       "matchPackageNames": ["chai-as-promised"],
       "allowedVersions": "<8"
-    }  
+    },
+    {
+      "matchPackageNames": ["sinon-chai"],
+      "allowedVersions": "<4"
+    }
   ]
 }
